@@ -76,6 +76,9 @@ a:hover {
   padding: 0.5em 0;
   border-bottom: 1px solid white;
 }
+#nav li.active, #nav li:not(#show-more):hover, #nav li:not(#show-more):active {
+  background: #0af;
+}
 #nav .nav-text {
   margin-left: 0.5em;
   display: none;

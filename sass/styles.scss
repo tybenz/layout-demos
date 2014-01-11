@@ -58,6 +58,10 @@ a {
     font-size: 1.5rem;
     padding: 0.5em 0;
     border-bottom: 1px solid white;
+
+    &.active, &:not(#show-more):hover, &:not(#show-more):active {
+      background: #0af;
+    }
   }
 
   .nav-text {
