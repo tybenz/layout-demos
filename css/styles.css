@@ -1,20 +1,25 @@
 @import url(http://fonts.googleapis.com/css?family=Raleway:400,200,700);
+/* vim: set tabstop=2 softtabstop=2 shiftwidth=2 expandtab: */
 * {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
-  box-sizing: border-box; }
+  box-sizing: border-box;
+}
 
 html, body {
   font-family: "Raleway", Helvetica, Arial, sans-serif;
   font-weight: 200;
   height: 100%;
-  margin: 0; }
+  margin: 0;
+}
 
 a {
   color: inherit;
-  text-decoration: none; }
-  a:hover {
-    text-decoration: underline; }
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
 
 #wrapper {
   height: 100%;
@@ -33,24 +38,27 @@ a {
   -ms-align-items: justify;
   -o-align-items: justify;
   align-items: justify;
-  -ms-flex-align: justify; }
+  -ms-flex-align: justify;
+}
 
 #show-more {
-  display: none; }
-  #show-more:before {
-    content: "";
-    position: absolute;
-    right: 1em;
-    top: 50%;
-    -webkit-transform: translateY(-250%);
-    -moz-transform: translateY(-250%);
-    -ms-transform: translateY(-250%);
-    -o-transform: translateY(-250%);
-    transform: translateY(-250%);
-    width: 1em;
-    height: 0.15em;
-    background: white;
-    box-shadow: 0 0.25em 0 0 white, 0 0.5em 0 0 white; }
+  display: none;
+}
+#show-more:before {
+  content: "";
+  position: absolute;
+  right: 1em;
+  top: 50%;
+  -webkit-transform: translateY(-250%);
+  -moz-transform: translateY(-250%);
+  -ms-transform: translateY(-250%);
+  -o-transform: translateY(-250%);
+  transform: translateY(-250%);
+  width: 1em;
+  height: 0.15em;
+  background: white;
+  box-shadow: 0 0.25em 0 0 white, 0 0.5em 0 0 white;
+}
 
 #nav {
   overflow: hidden;
@@ -59,16 +67,19 @@ a {
   background: #222;
   margin: 0;
   padding: 0;
-  color: white; }
-  #nav li {
-    position: relative;
-    text-align: center;
-    font-size: 1.5rem;
-    padding: 0.5em 0;
-    border-bottom: 1px solid white; }
-  #nav .nav-text {
-    margin-left: 0.5em;
-    display: none; }
+  color: white;
+}
+#nav li {
+  position: relative;
+  text-align: center;
+  font-size: 1.5rem;
+  padding: 0.5em 0;
+  border-bottom: 1px solid white;
+}
+#nav .nav-text {
+  margin-left: 0.5em;
+  display: none;
+}
 
 #main {
   background: #fdfdfd;
@@ -81,15 +92,19 @@ a {
   -ms-flex: 1;
   flex: 1;
   overflow-y: auto;
-  height: 100%; }
-  #main #main-inner {
-    max-width: 50em; }
-    #main #main-inner > h1:first-child {
-      font-size: 3.5rem;
-      margin-top: 0; }
-  #main p {
-    font-size: 1.1rem;
-    line-height: 1.4em; }
+  height: 100%;
+}
+#main #main-inner {
+  max-width: 50em;
+}
+#main #main-inner > h1:first-child {
+  font-size: 3.5rem;
+  margin-top: 0;
+}
+#main p {
+  font-size: 1.1rem;
+  line-height: 1.4em;
+}
 
 @media screen and (max-width: 30em) {
   #wrapper {
@@ -99,7 +114,8 @@ a {
     -webkit-flex-direction: column;
     -moz-flex-direction: column;
     flex-direction: column;
-    -ms-flex-direction: column; }
+    -ms-flex-direction: column;
+  }
 
   #nav {
     width: auto;
@@ -112,24 +128,33 @@ a {
     transition-duration: 0.1s;
     -webkit-transition-timing-function: ease-in;
     -moz-transition-timing-function: ease-in;
-    transition-timing-function: ease-in; }
-    #nav.expand {
-      height: 378px; }
+    transition-timing-function: ease-in;
+  }
+  #nav.expand {
+    height: 378px;
+  }
 
   #show-more {
-    display: list-item; }
+    display: list-item;
+  }
 
   html, body, #wrapper {
     height: auto;
-    min-height: 100%; }
+    min-height: 100%;
+  }
 
   #main {
-    height: auto; }
-    #main #main-inner > h1:first-child {
-      font-size: 2rem; }
+    height: auto;
+  }
+  #main #main-inner > h1:first-child {
+    font-size: 2rem;
+  }
 
   #nav li {
     text-align: left;
-    padding-left: 1em; }
+    padding-left: 1em;
+  }
   #nav .nav-text {
-    display: inline; } }
+    display: inline;
+  }
+}

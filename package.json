@@ -1,0 +1,9 @@
+{
+  "name": "layout-demos",
+  "description": "Layout Demos",
+  "devDependencies": {
+    "grunt": "latest",
+    "grunt-contrib-watch": "latest",
+    "grunt-contrib-sass": "latest"
+  }
+}
