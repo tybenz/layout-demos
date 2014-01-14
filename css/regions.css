@@ -1,0 +1,155 @@
+/* vim: set tabstop=2 softtabstop=2 shiftwidth=2 expandtab: */
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+#wrapper {
+  position: relative;
+  height: 100%;
+  display: -webkit-box;
+  display: -moz-box;
+  display: box;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -moz-box-orient: vertical;
+  box-orient: vertical;
+  -webkit-flex-direction: column;
+  -moz-flex-direction: column;
+  flex-direction: column;
+  -ms-flex-direction: column;
+  -webkit-transition-property: -webkit-transform;
+  -moz-transition-property: -moz-transform;
+  transition-property: transform;
+  -webkit-transition-duration: 0.3s;
+  -moz-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-timing-function: ease-in;
+  -moz-transition-timing-function: ease-in;
+  transition-timing-function: ease-in;
+}
+
+#main {
+  -webkit-box-flex: 1;
+  -moz-box-flex: 1;
+  box-flex: 1;
+  -webkit-flex: 1;
+  -moz-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  padding: 1rem;
+}
+
+#footer, #header {
+  padding: 1rem;
+  font-weight: 400;
+  background: #222;
+  color: white;
+  margin: 0;
+  display: -webkit-box;
+  display: -moz-box;
+  display: box;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -moz-box-align: center;
+  box-align: center;
+  -webkit-align-items: center;
+  -moz-align-items: center;
+  -ms-align-items: center;
+  -o-align-items: center;
+  align-items: center;
+  -ms-flex-align: center;
+}
+#footer .nav-text, #header .nav-text {
+  margin-left: 1em;
+}
+
+#footer > div {
+  margin: 0 1rem;
+}
+
+#logo {
+  cursor: pointer;
+  display: -webkit-box;
+  display: -moz-box;
+  display: box;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -moz-box-align: center;
+  box-align: center;
+  -webkit-align-items: center;
+  -moz-align-items: center;
+  -ms-align-items: center;
+  -o-align-items: center;
+  align-items: center;
+  -ms-flex-align: center;
+  font-size: 2rem;
+  padding: 0.25em;
+}
+#logo.show-sidebar {
+  background-color: #0af;
+}
+
+#header-middle {
+  -webkit-box-flex: 1;
+  -moz-box-flex: 1;
+  box-flex: 1;
+  -webkit-flex: 1;
+  -moz-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+}
+
+#account, #settings {
+  margin: 0 1rem;
+}
+
+#sidebar {
+  padding: 0.5rem 1rem;
+  -webkit-flow-from: sidebar;
+  -ms-flow-from: sidebar;
+  flow-from: sidebar;
+  width: 200px;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  background: #111;
+  color: white;
+  left: -200px;
+}
+
+#menu-btn {
+  margin-left: 1rem;
+  font-size: 1rem;
+}
+
+#wrapper.show-sidebar {
+  -webkit-transform: translateX(200px);
+  -moz-transform: translateX(200px);
+  -ms-transform: translateX(200px);
+  -o-transform: translateX(200px);
+  transform: translateX(200px);
+}
+
+@media screen and (max-width: 35rem) {
+  #footer {
+    opacity: 0;
+  }
+
+  #footer > div, #account, #settings {
+    -webkit-flow-into: sidebar;
+    -ms-flow-into: sidebar;
+    flow-into: sidebar;
+    margin: 1rem 0;
+  }
+}

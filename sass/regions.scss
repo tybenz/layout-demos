@@ -1,0 +1,93 @@
+/* vim: set tabstop=2 softtabstop=2 shiftwidth=2 expandtab: */
+
+@import 'bourbon/bourbon';
+@import 'neat/neat';
+
+#wrapper {
+  position: relative;
+  height: 100%;
+  @include display(flex);
+  @include flex-direction(column);
+  @include transition-property (transform);
+  @include transition-duration(0.3s);
+  @include transition-timing-function(ease-in);
+}
+
+#main {
+  @include flex(1);
+  padding: 1rem;
+}
+
+#footer, #header {
+  padding: 1rem;
+  font-weight: 400;
+  background: #222;
+  color: white;
+  margin: 0;
+  @include display(flex);
+  @include align-items(center);
+
+  .nav-text {
+    margin-left: 1em;
+  }
+}
+
+#footer > div {
+  margin: 0 1rem;
+}
+
+#logo {
+  cursor: pointer;
+  @include display(flex);
+  @include align-items(center);
+  font-size: 2rem;
+  padding: 0.25em;
+
+  &.show-sidebar {
+    background-color: #0af;
+  }
+}
+
+#header-middle {
+  @include flex(1);
+}
+
+#account, #settings {
+  margin: 0 1rem;
+}
+
+#sidebar {
+  padding: 0.5rem 1rem;
+  -webkit-flow-from: sidebar;
+  -ms-flow-from: sidebar;
+  flow-from: sidebar;
+  width: 200px;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  background: #111;
+  color: white;
+  left: -200px;
+}
+
+#menu-btn {
+  margin-left: 1rem;
+  font-size: 1rem;
+}
+
+#wrapper.show-sidebar {
+  @include transform(translateX(200px));
+}
+
+@include media(max-width 35rem) {
+  #footer {
+    opacity: 0;
+  }
+
+  #footer > div, #account, #settings {
+    -webkit-flow-into: sidebar;
+    -ms-flow-into: sidebar;
+    flow-into: sidebar;
+    margin: 1rem 0;
+  }
+}

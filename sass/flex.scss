@@ -1,0 +1,124 @@
+/* vim: set tabstop=2 softtabstop=2 shiftwidth=2 expandtab: */
+
+@import 'bourbon/bourbon';
+@import 'neat/neat';
+@import url(http://fonts.googleapis.com/css?family=Raleway:400,200,700);
+
+#wrapper {
+  height: 100%;
+  @include display(flex);
+  @include align-items(justify);
+}
+
+#show-more {
+  display: none;
+  &:before {
+    content: "";
+    position: absolute;
+    right: 1em;
+    top: 50%;
+    @include transform(translateY(-250%));
+    width: 1em;
+    height: 0.15em;
+    background: white;
+    box-shadow: 
+      0 0.25em 0 0 white,
+      0 0.5em 0 0 white;
+  }
+}
+
+#nav {
+  overflow: hidden;
+  font-weight: 400;
+  width: 60px;
+  background: #222;
+  margin: 0;
+  padding: 0;
+  color: white;
+
+  li {
+    position: relative;
+    text-align: center;
+    font-size: 1.5rem;
+    padding: 0.5em 0;
+    border-bottom: 1px solid white;
+
+    &.active, &:not(#show-more):hover, &:not(#show-more):active {
+      background: #0af;
+    }
+  }
+
+  .nav-text {
+    margin-left: 0.5em;
+    display: none;
+  }
+}
+
+#main {
+  background: #fdfdfd;
+  padding: 2em;
+  @include flex(1);
+  overflow-y: auto;
+  height: 100%;
+
+  #main-inner {
+    max-width: 50em;
+
+    > h1:first-child {
+      font-size: 3.5rem;
+      margin-top: 0;
+    }
+  }
+
+
+  p {
+    font-size: 1.1rem;
+    line-height: 1.4em;
+  }
+}
+
+@include media(max-width 30em) {
+  #wrapper {
+    @include flex-direction(column);
+  }
+
+  #nav {
+    width: auto;
+    height: 53px;
+    @include transition-property(height);
+    @include transition-duration(0.1s);
+    @include transition-timing-function(ease-in);
+
+    &.expand {
+      height: 378px;
+    }
+  }
+
+  #show-more {
+    display: list-item;
+  }
+
+  html, body, #wrapper {
+    height: auto;
+    min-height: 100%;
+  }
+
+  #main {
+    height: auto;
+
+    #main-inner > h1:first-child {
+      font-size: 2rem;
+    }
+  }
+
+  #nav {
+    li {
+      text-align: left;
+      padding-left: 1em;
+    }
+
+    .nav-text {
+      display: inline;
+    }
+  }
+}
