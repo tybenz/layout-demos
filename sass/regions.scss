@@ -2,38 +2,43 @@
 
 @import 'bourbon/bourbon';
 @import 'neat/neat';
+@import '_colors.scss';
 
 #wrapper {
   position: relative;
-  height: 100%;
+  min-height: 100%;
   @include display(flex);
   @include flex-direction(column);
   @include transition-property (transform);
-  @include transition-duration(0.3s);
+  @include transition-duration(0.2s);
   @include transition-timing-function(ease-in);
 }
 
 #main {
   @include flex(1);
-  padding: 1rem;
+  padding: 1.5rem;
+}
+
+#main-inner {
+  max-width: 50em;
 }
 
 #footer, #header {
   padding: 1rem;
   font-weight: 400;
-  background: #222;
+  background: $red;
   color: white;
   margin: 0;
   @include display(flex);
   @include align-items(center);
-
-  .nav-text {
-    margin-left: 1em;
-  }
 }
 
 #footer > div {
-  margin: 0 1rem;
+  margin: 0 1rem 0 0;
+}
+
+#header .nav-text {
+  margin-left: 1em;
 }
 
 #logo {
@@ -44,7 +49,8 @@
   padding: 0.25em;
 
   &.show-sidebar {
-    background-color: #0af;
+    background-color: $white;
+    color: $black;
   }
 }
 
@@ -65,7 +71,7 @@
   position: absolute;
   top: 0;
   bottom: 0;
-  background: #111;
+  background: $black;
   color: white;
   left: -200px;
 }
@@ -79,7 +85,19 @@
   @include transform(translateX(200px));
 }
 
+#footer .fa {
+  display: none;
+}
+
 @include media(max-width 35rem) {
+  #footer .fa {
+    display: inline;
+  }
+
+  #footer .nav-text {
+    margin-left: 1em;
+  }
+
   #footer {
     opacity: 0;
   }
