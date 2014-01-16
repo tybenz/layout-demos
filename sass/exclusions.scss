@@ -1,0 +1,74 @@
+/* vim: set tabstop=2 softtabstop=2 shiftwidth=2 expandtab: */
+
+@import 'bourbon/bourbon';
+@import 'neat/neat';
+@import 'styles.scss';
+
+#header {
+  padding: 1rem;
+  font-weight: 400;
+  background: $navy;
+  color: white;
+  margin: 0;
+  @include display(flex);
+  @include align-items(center);
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+#header-middle {
+  @include flex(1);
+}
+
+
+#main {
+  -webkit-column-count: 1;
+  -ms-column-count: 1;
+  column-count: 1;
+  padding: 1rem;
+  position: relative;
+}
+
+#item {
+  font-size: 20rem;
+  background: $teal;
+  height: 206px;
+  border-radius: 23px;
+  position: absolute;
+
+  .fa {
+    position: relative;
+    top: -95px;
+  }
+}
+
+#exclude {
+  float: left;
+  width: 343px;
+  height: 206px;
+}
+
+p {
+  -webkit-margin-before: 0;
+  -ms-margin-before: 0;
+  margin-before: 0;
+}
+
+.float-left {
+  float: left;
+  shape-outside: rectangle(0, 0, 100%, 100%, 40%, 50%);
+}
+
+.float-right {
+  float: right;
+  shape-outside: polygon(80% 0, 100% 0, 100% 100%, 10% 100%, 0% 80%);
+}
+
+.container {
+  width: 600px;
+  border: 1px solid black;
+  padding: 5px;
+  font-family: "source-sans-pro", sans-serif;
+  overflow: hidden;
+  resize: both;
+}

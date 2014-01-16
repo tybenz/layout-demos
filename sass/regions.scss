@@ -2,7 +2,7 @@
 
 @import 'bourbon/bourbon';
 @import 'neat/neat';
-@import '_colors.scss';
+@import 'styles.scss';
 
 #wrapper {
   position: relative;
@@ -15,6 +15,7 @@
 }
 
 #main {
+  @include transform(translate3d(0,0,0));
   @include flex(1);
   padding: 1.5rem;
 }
@@ -24,6 +25,7 @@
 }
 
 #footer, #header {
+  @include transform(translate3d(0,0,0));
   padding: 1rem;
   font-weight: 400;
   background: $red;
